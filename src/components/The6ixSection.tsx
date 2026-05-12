@@ -100,7 +100,7 @@ export default function The6ixSection() {
               fontStyle: "italic",
             }}
           >
-            Around here, they don't call it Toronto.
+            Around here, they don&apos;t call it Toronto.
             <br />
             They call it&nbsp;<span style={{ color: "rgba(205,162,72,0.95)", fontStyle: "normal" }}>The 6ix</span>.
           </motion.p>

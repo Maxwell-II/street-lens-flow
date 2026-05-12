@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 // ── Typewriter ──────────────────────────────────────────────────────────────
@@ -78,7 +79,7 @@ const cardContainer = {
 };
 const cardItem = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0 },
 };
 
 // ── Drake profile images ─────────────────────────────────────────────────────
@@ -112,15 +113,14 @@ export default function DrakeSection() {
     >
       {/* Blurred concert background */}
       <div style={{ position: "absolute", inset: "-4%", zIndex: 0 }}>
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=1920&q=80"
           alt=""
+          fill
+          sizes="100vw"
           style={{
-            width: "100%",
-            height: "100%",
             objectFit: "cover",
             filter: "blur(6px) brightness(0.3) saturate(0.6)",
-            display: "block",
           }}
         />
       </div>
@@ -265,7 +265,7 @@ export default function DrakeSection() {
               the boundaries of Hip-Hop and R&B.
               <br />
               Founder of OVO Sound, global ambassador for the Toronto Raptors —
-              he's the reason the world knows&nbsp;
+              he&apos;s the reason the world knows&nbsp;
               <span style={{ color: "rgba(205,162,72,0.85)" }}>The 6ix</span>.
             </p>
           </div>
@@ -319,6 +319,7 @@ export default function DrakeSection() {
             <motion.div
               key={album.title}
               variants={cardItem}
+              transition={{ duration: 0.7 }}
               style={{
                 background: album.bg,
                 border: "1px solid rgba(255,255,255,0.06)",

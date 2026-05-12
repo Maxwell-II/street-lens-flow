@@ -1,13 +1,33 @@
 @import "tailwindcss";
 
+:root {
+  --body-bg: #07080C;
+  --drake-gold: #C8A84B;
+  --font-geist-sans: "Segoe UI", Arial, Helvetica, sans-serif;
+  --font-geist-mono: "Cascadia Mono", "Consolas", "Courier New", monospace;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: #000;
+  background: var(--body-bg);
+  transition: background 1.2s ease;
   color: #fff;
+  font-family: var(--font-geist-sans);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
 }

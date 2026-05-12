@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionTemplate } from "framer-motion";
 
 export default function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -10,19 +10,19 @@ export default function HeroSection() {
     offset: ["start start", "end end"],
   });
 
-  const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
-  const overlayOpacity = useTransform(scrollYProgress, [0, 0.95], [0.2, 0.82]);
+  const imgScale = useTransform(scrollYProgress, [0, 0.8], [1, 1.25]);
+  const imgBrightness = useTransform(scrollYProgress, [0, 0.7], [1, 0.35]);
 
   const coordsOpacity = useTransform(scrollYProgress, [0.04, 0.2], [0, 1]);
-  const titleOpacity = useTransform(scrollYProgress, [0.04, 0.22], [0, 1]);
-  const titleY = useTransform(scrollYProgress, [0.04, 0.22], [28, 0]);
+  const titleOpacity = useTransform(scrollYProgress, [0.05, 0.3], [1, 0]);
+  const titleY = useTransform(scrollYProgress, [0.05, 0.35], [0, -120]);
   const subtitleOpacity = useTransform(scrollYProgress, [0.18, 0.38], [0, 1]);
   const subtitleY = useTransform(scrollYProgress, [0.18, 0.38], [16, 0]);
   const cameraOpacity = useTransform(scrollYProgress, [0.55, 0.72], [0, 1]);
-  const hintOpacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
+  const hintOpacity = useTransform(scrollYProgress, [0, 0.07], [1, 0]);
 
   return (
-    <div ref={ref} style={{ height: "280vh" }}>
+    <div ref={ref} style={{ height: "300vh" }}>
       <div style={{ position: "sticky", top: 0, height: "100vh", overflow: "hidden" }}>
         <motion.img
           src="https://images.unsplash.com/photo-1541535650810-10d26f5c2ab3?w=1920&q=80"
@@ -33,14 +33,15 @@ export default function HeroSection() {
             height: "100%",
             objectFit: "cover",
             display: "block",
+            filter: useMotionTemplate`brightness(${imgBrightness})`,
           }}
         />
         <motion.div
           style={{
-            opacity: overlayOpacity,
             position: "absolute",
             inset: 0,
             background: "linear-gradient(to bottom, #000 0%, #050207 100%)",
+            opacity: useTransform(imgBrightness, [1, 0.35], [0.2, 0.82]),
           }}
         />
 
@@ -70,6 +71,9 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             style={{
               opacity: titleOpacity,
               y: titleY,
