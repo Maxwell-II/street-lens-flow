@@ -46,3 +46,5 @@ CLAUDE.md
 AGENTS.md
 .claude/
 *.claude
+.playwright-cli/
+output/

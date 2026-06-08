@@ -1,15 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --body-bg: #07080C;
-  --drake-gold: #C8A84B;
-  --font-geist-sans: "Segoe UI", Arial, Helvetica, sans-serif;
-  --font-geist-mono: "Cascadia Mono", "Consolas", "Courier New", monospace;
+  --body-bg: #080705;
+  --page-bg: #080705;
+  --panel: #12100c;
+  --ink: #f6efe1;
+  --muted: #b7ae9f;
+  --accent: #d6b35a;
+  --line: rgba(246, 239, 225, 0.12);
+  --line-strong: rgba(246, 239, 225, 0.24);
+  --font-sans: "Segoe UI", Arial, Helvetica, sans-serif;
+  --font-mono: "Cascadia Mono", "Consolas", "Courier New", monospace;
+  color-scheme: dark;
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -18,16 +23,51 @@ html {
 }
 
 body {
-  background: var(--body-bg);
-  transition: background 1.2s ease;
-  color: #fff;
-  font-family: var(--font-geist-sans);
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(214, 179, 90, 0.35);
+  color: var(--ink);
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  width: 10px;
 }
 
-* {
-  scrollbar-width: none;
+::-webkit-scrollbar-track {
+  background: #080705;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(246, 239, 225, 0.22);
+  border: 2px solid #080705;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

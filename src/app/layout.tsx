@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Street Lens Flow",
-  description: "Scroll narrative photography",
+  title: "Street Lens Flow | Toronto Night Photo Essay",
+  description: "A cinematic Toronto street photography route through night light, transit, and lake air.",
 };
 
 export default function RootLayout({
