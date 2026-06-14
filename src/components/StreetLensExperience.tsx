@@ -18,10 +18,10 @@ type Chapter = PhotoFrame & {
 
 const heroFrames: PhotoFrame[] = [
   {
-    src: "https://images.unsplash.com/photo-1669369456446-c3f040a4a326?w=1200&q=82&auto=format&fit=crop",
-    alt: "University Avenue in Toronto at night",
-    title: "University Avenue",
-    caption: "Hospital glass, red signals, and the clean line of a wet road.",
+    src: "https://images.unsplash.com/photo-1645665030367-69a50da9d368?w=1800&q=90&auto=format&fit=crop",
+    alt: "Paradise Theatre marquee on a wet Toronto street at night",
+    title: "Bloor marquee",
+    caption: "The sign does the work of a streetlamp.",
   },
   {
     src: "https://images.unsplash.com/photo-1751163858724-a5bea5c3a2bf?w=900&q=82&auto=format&fit=crop",
@@ -64,12 +64,12 @@ const chapters: Chapter[] = [
     lens: "35mm, f/1.8",
   },
   {
-    src: "https://images.unsplash.com/photo-1669369456446-c3f040a4a326?w=1400&q=82&auto=format&fit=crop",
-    alt: "University Avenue street at night in Toronto",
-    title: "University line",
+    src: "https://images.unsplash.com/photo-1575574829566-658edcaffb58?w=1400&q=82&auto=format&fit=crop",
+    alt: "Traffic and light trails on a Toronto street at night",
+    title: "Traffic trace",
     caption:
-      "Movement becomes texture at street level. The camera looks for signal lights, parked reflections, and the brief silence before traffic returns.",
-    place: "University Avenue",
+      "The frame stays low and lets the road carry the exposure. Headlights, wet pavement, and building edges do the talking.",
+    place: "Downtown trace",
     lens: "28mm, f/2",
   },
   {
